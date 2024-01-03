@@ -1,6 +1,7 @@
 import Character from '../app';
+import Bowerman from '../Bowerman';
 
-const personCharacter = new Character('Mary', 'Daemon', 10, 10)
+const personCharacter = new Character('Mary', 'Daemon')
 
 test('new Character object is created as expected', () => {
   const result = {
@@ -8,8 +9,8 @@ test('new Character object is created as expected', () => {
     _type: 'Daemon',
     health: 100,
     level: 1,
-    attack: 10,
-    defence: 10
+    attack: undefined,
+    defence: undefined
   };
 
   expect(result).toEqual(personCharacter);
@@ -28,23 +29,23 @@ test.each([
   }
 );
 
-const personCharacter2 = new Character('Mary', 'Daemon',10,10);
+const personCharacter2 = new Bowerman('Mary');
 personCharacter2.levelUp();
 
 test('levelUp method result', () => {
   const result = {
     _name: 'Mary',
-    _type: 'Daemon',
+    _type: 'Bowerman',
     health: 100,
     level: 2,
-    attack: 12,
-    defence: 12
+    attack: 30,
+    defence: 30
   };
 
   expect(result).toEqual(personCharacter2);
 });
 
-const personCharacter3 = new Character('Mary', 'Daemon',10,10);
+const personCharacter3 = new Bowerman('Mary');
 personCharacter3.damage(3000);
 
 test('levelUp method condition', () => {
@@ -54,7 +55,7 @@ test('levelUp method condition', () => {
 });
 
 test('damage() method result', () => {
-  const result = 73.6;
+  const result = 79;
   const points = 30;
   personCharacter2.damage(points);
   expect(result).toEqual(personCharacter2.health);
