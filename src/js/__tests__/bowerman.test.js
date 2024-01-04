@@ -1,8 +1,7 @@
 import Bowerman from '../Bowerman';
 
-const personBowerman = new Bowerman('Mary')
-
 test('new Bowerman object is created as expected', () => {
+  const personBowerman = new Bowerman('Mary')
   const result = {
     _name: 'Mary',
     _type: 'Bowerman',

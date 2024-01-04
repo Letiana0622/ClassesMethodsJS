@@ -1,9 +1,8 @@
 import Character from '../app';
 import Bowerman from '../Bowerman';
 
-const personCharacter = new Character('Mary', 'Daemon')
-
 test('new Character object is created as expected', () => {
+  const personCharacter = new Character('Mary', 'Daemon')
   const result = {
     _name: 'Mary',
     _type: 'Daemon',
@@ -29,10 +28,9 @@ test.each([
   }
 );
 
-const personCharacter2 = new Bowerman('Mary');
-personCharacter2.levelUp();
-
 test('levelUp method result', () => {
+  const personCharacter2 = new Bowerman('Mary');
+  personCharacter2.levelUp();
   const result = {
     _name: 'Mary',
     _type: 'Bowerman',
@@ -45,16 +43,17 @@ test('levelUp method result', () => {
   expect(result).toEqual(personCharacter2);
 });
 
-const personCharacter3 = new Bowerman('Mary');
-personCharacter3.damage(3000);
-
 test('levelUp method condition', () => {
+  const personCharacter3 = new Bowerman('Mary');
+  personCharacter3.damage(3000);
   expect(() => {
     personCharacter3.levelUp()
   }).toThrow(); 
 });
 
 test('damage() method result', () => {
+  const personCharacter2 = new Bowerman('Mary');
+  personCharacter2.levelUp();
   const result = 79;
   const points = 30;
   personCharacter2.damage(points);
@@ -62,6 +61,8 @@ test('damage() method result', () => {
 });
 
 test('damage() method condition', () => {
+  const personCharacter3 = new Bowerman('Mary');
+  personCharacter3.damage(3000);
   expect(personCharacter3.damage(1)).toBeUndefined();
 });
 
